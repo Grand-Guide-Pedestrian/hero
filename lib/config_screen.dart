@@ -3,6 +3,10 @@ import 'package:ggp_hero/Config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ConfigScreen extends StatefulWidget {
+  final void Function(Config? config) updateConfig;
+
+  ConfigScreen(this.updateConfig);
+
   @override
   _ConfigScreenState createState() => _ConfigScreenState();
 }
@@ -84,6 +88,10 @@ class _ConfigScreenState extends State<ConfigScreen> {
 
           sharedPreferences.setString(Config.webSocketServerURLKey, _webSocketServerURLController.text);
           sharedPreferences.setString(Config.gameIDKey, _gameIDController.text);
+
+          final config = Config(_webSocketServerURLController.text, _gameIDController.text);
+
+          widget.updateConfig(config);
         },
         child: const Icon(
           Icons.arrow_right_alt,
