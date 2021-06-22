@@ -17,7 +17,7 @@ class GGPHeroApp extends StatefulWidget {
 }
 
 class _GGPHeroAppState extends State<GGPHeroApp> {
-  Config? _config = null;
+  Config? _config;
 
   @override
   Widget build(BuildContext context) {
