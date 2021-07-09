@@ -71,6 +71,8 @@ class _ConfigScreenState extends State<ConfigScreen> {
     setState(() {
       if (webSocketServerURL != null) {
         _webSocketServerURLController.text = webSocketServerURL;
+      } else {
+        _webSocketServerURLController.text = 'ws://18.192.37.20:80';
       }
       if (gameID != null) {
         _gameIDController.text = gameID;
